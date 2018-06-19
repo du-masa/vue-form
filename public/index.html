@@ -20,7 +20,6 @@
         name="name"
         @input="checkNameValue"
       >
-      <p class="form__error" v-if="name.errorFlag">名前を入力してください</p>
     </div>
     <div class="form__control">
       <label for="" class="form__label">
@@ -57,7 +56,6 @@
       </label>
       <textarea v-model="content.value" name="content" class="form__input" @input="checkContentValue">
       </textarea>
-      <p class="form__error" v-if="content.errorFlag">「問い合わせ内容」を入力してください</p>
       <p class="form__count" :class="{'form__count--overlimit': contentCount < 0}">あと<strong>{{contentCount}}</strong>文字</p>
     </div>
     <button type="submit" class="form__btn" :disabled="isInvalid">

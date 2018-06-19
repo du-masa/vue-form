@@ -6,33 +6,21 @@ document.addEventListener('DOMContentLoaded', function() {
     el: '#form',
     data: function() {
       return {
-        name: {
-          value: '',
-          errorFlag: false,
-        },
+        name: '',
         gender: 'male',
         kind: 'kind2',
-        content: {
-          value: '',
-          errorFlag: false,
-        },
+        content: '',
         contentBaseCount: 300
       }
     },
     methods: {
-      checkNameValue() {
-        this.name.errorFlag = this.name.value === ''
-      },
-      checkContentValue() {
-        this.content.errorFlag = this.content.value === ''
-      }
     },
     computed: {
       contentCount() {
         return this.contentBaseCount - this.content.value.length
       },
       isInvalid() {
-        return (!this.name.value || this.name.errorFlag) || (!this.content.value || this.content.errorFlag) || this.contentCount < 0
+        return !this.name || !this.content || this.contentCount < 0
       }
     }
   })
