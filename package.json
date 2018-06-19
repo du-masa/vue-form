@@ -1,0 +1,32 @@
+{
+  "name": "tab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:demo": "webpack -w --mode development --config ./demo/webpack.config.js & browser-sync start --config ./demo/bs-config.js",
+    "start": "webpack -w --mode development & browser-sync start --config bs-config.js",
+    "jsonServer": "json-server --watch tabList.json --port 3000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.23.6",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^6.0.7",
+    "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.13"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "normalize.scss": "^0.1.0",
+    "vue": "^2.5.16"
+  }
+}
