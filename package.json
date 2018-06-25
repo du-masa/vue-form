@@ -19,15 +19,17 @@
     "browser-sync": "^2.23.6",
     "css-loader": "^0.28.11",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "hoek": "~> 4.2.1",
     "node-sass": "^4.9.0",
     "sass-loader": "^6.0.7",
+    "vue-template-compiler": "^2.5.16",
     "webpack": "^4.4.1",
-    "webpack-cli": "^2.0.13",
-    "hoek": "~> 4.2.1"
+    "webpack-cli": "^2.0.13"
   },
   "dependencies": {
     "jquery": "^3.3.1",
     "normalize.scss": "^0.1.0",
-    "vue": "^2.5.16"
+    "vue": "^2.5.16",
+    "vue-loader": "^14.2.3"
   }
 }
