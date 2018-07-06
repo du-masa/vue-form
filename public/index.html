@@ -9,8 +9,7 @@
 <body>
   <h1>form</h1>
   <form class="form" v-cloak id="form" action="/" method="get">
-    <!-- <input-name @changename="setNameValue"></input-name> -->
-    <input-name :data1="'string'" v-bind:data2="{key: 'value'}" v-bind:data3="[1,2,3]"></input-name>
+    <input-name @changename="setNameValue"></input-name>
     <div class="form__control">
       <label for="" class="form__label">
         性別
