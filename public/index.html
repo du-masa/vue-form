@@ -8,22 +8,14 @@
 </head>
 <body>
   <h1>form</h1>
-  <form class="form" id="form" action="/" method="get">
-    <div class="form__control">
-      <label for="" class="form__label">
-        名前<span>必須</span>
-      </label>
-      <input
-        class="form__input"
-        type="text"
-        name="name"
-      >
-    </div>
+  <form class="form" v-cloak id="form" action="/" method="get">
+    <!-- <input-name @changename="setNameValue"></input-name> -->
+    <input-name :data1="'string'" v-bind:data2="{key: 'value'}" v-bind:data3="[1,2,3]"></input-name>
     <div class="form__control">
       <label for="" class="form__label">
         性別
       </label>
-      <select name="gender" class="form__input">
+      <select name="gender" class="form__input" v-model="gender">
         <option value="male">男性</option>
         <option value="female">女性</option>
         <option value="other">その他</option>
@@ -35,15 +27,15 @@
       </label>
       <div class="form__radioList">
         <div class="form__radioItem">
-          <input name="kind" id="kind1" value="kind1" type="radio">
+          <input name="kind" id="kind1" v-model="kind" value="kind1" type="radio">
           <label for="kind1">問い合わせ1</label>
         </div>
         <div class="form__radioItem">
-          <input name="kind" id="kind2" value="kind2" type="radio">
+          <input name="kind" id="kind2" v-model="kind" value="kind2" type="radio">
           <label for="kind2">問い合わせ2</label>
         </div>
         <div class="form__radioItem">
-          <input name="kind" id="kind3" value="kind3" type="radio">
+          <input name="kind" id="kind3" v-model="kind" value="kind3" type="radio">
           <label for="kind3">問い合わせ3</label>
         </div>
       </div>
@@ -52,12 +44,12 @@
       <label for="" class="form__label">
         問い合わせ内容<span>必須</span>
       </label>
-      <textarea name="content" class="form__input"></textarea>
-      <p class="form__count">あと<strong>300</strong>文字</p>
+      <textarea v-model="content" name="content" class="form__input"></textarea>
+      <p
+        :class="{'form__count--overlimit': contentCount < 0}"
+        class="form__count">あと<strong>{{contentCount}}</strong>文字</p>
     </div>
-    <button type="submit" class="form__btn">
-      送信
-    </button>
+    <btn v-bind:isdisabled="isInvalid"></btn>
   </form>
   <script src="./js/form.bundle.js"></script>
 </body>
